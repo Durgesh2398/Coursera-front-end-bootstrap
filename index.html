@@ -89,9 +89,8 @@
                 </div>
                 <div class = "col-3 col-sm-3">
 
-                    <a role="button" class="btn btn-block nav-link btn-warning"
-                    data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
-                    data-placement="bottom" href="#reserveform">Reserve Table</a>
+                    <a class="btn btn-warning btn-sm btn-block" role="button" data-toggle="modal" data-target="#resTblModal">Reserve Table</a>
+
               </div> 
             </div>
         </div>
@@ -212,13 +211,16 @@
         </div>
     </div>
 
-    <div class = "row row-content align-items-center">
-        <div class = "col-8 offset-2">
-             <div class = "card">
-                  <h3 class = "card-header bg-warning text"> Reserve Table</h3>
-                  <div class = "card-body">
-                       <form id = "formForReservingTable">
+    <div id="resTblModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                 <div class="modal-header">
+                    <h4 class="modal-title">Reserve Table</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 </div>
   
+                 <div class="modal-body">
+                       <form id = "formForReservingTable">
                            <div class = "form-group row"> 
                                 <label for="guestsnum" class="col-md-2">Number of Guests</label>
                                 <div class = "ml-3">
@@ -230,9 +232,9 @@
                                      <input type="radio" class="form-check-input" name="guestNum">
                                      <label class="form-check-label">2</label>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                     <input type="radio" class="form-check-input" name="guestNum">
-                                     <label class="form-check-label">3</label>
+                                <div class="form-check form-check-inline custom-radio">
+                                     <input type="radio" class="form-check-input custom-control-input" name="guestNum" checked>
+                                     <label class="form-check-label custom-control-label">3</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                      <input type="radio" class="form-check-input" name="guestNum">
@@ -249,6 +251,18 @@
                               </div>
                                 </div>
   
+                           <div class="form-group row align-items-center">
+                              <label for="section" class="col-12 col-sm-2 col-form-label">Section</label>
+                              <div class = "btn-group btn-group-toggle col-md-4" data-toggle="buttons">
+                                   <label class="btn btn-success active">
+                                         <input type="radio" name="sections" id="section1" autocomplete="off" checked> Non-Smoking
+                                   </label>
+                                   <label class="btn btn-danger">
+                                          <input type="radio" name="sections" id="section2" automplete="off">Smoking</input>  
+                                   </label>  
+                              </div>
+                           </div>     
+  
                            <div class = "form-group row">
                               <label for="guestsnum" class="col-md-2">Date and Time</label>
   
@@ -261,18 +275,21 @@
                               </div>
                            </div>
   
-                           <div class = "form-group row">
-                              <div class="offset-md-2 col-md-3">
+                           <div class = "form-group row offset-md-2">
+                              <div class="ml-1">
+                                 <button type="submit" class="btn btn-secondary">Cancel</button> 
+                              </div>
+                              <div class="ml-1">
                                  <button type="submit" class="btn btn-info">Reserve</button> 
                               </div>
                            </div>
   
                        </form>
-                  </div>
-             </div>  
+                 </div>
+  
+            </div>
         </div>
-       </div>
-
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="row">
